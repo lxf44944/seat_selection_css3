@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+<title>体育馆模型图</title>
+<style>
+
+/*多项改变*/
+/*如需向多个样式添加过渡效果，请添加多个属性，由逗号隔开*/
+#div2 {
+	width: 100px;
+	height: 100px;
+	background: yellow;
+	/*向宽度、高度和转换添加过渡效果*/
+	transition: width 2s, height 2s;
+	-moz-transition: width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+	-webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+	-o-transition: width 2s, height 2s, -o-transform 2s; /* Opera */
+}
+#div2:hover {
+	width: 200px;
+	height: 200px;
+	transform: rotate(180deg);
+	-moz-transform: rotate(180deg); /* Firefox 4 */
+	-webkit-transform: rotate(180deg); /* Safari and Chrome */
+	-o-transform: rotate(180deg); /* Opera */
+}
+#content {
+	width:900px;
+	height:600px;
+	border: 1px solid black;
+	margin:0 auto;
+}
+#border-out {
+	border: 1px solid black;
+	background: #ADADAD;
+	width: 800px;
+	height: 500px;
+	/*将 div 元素变为椭圆：*/
+	border-radius: 50%;
+	-ms-border-radius: 50%; 	/* IE 9 */
+	-moz-border-radius: 50%; 	/* Firefox */
+	-webkit-border-radius: 50%; /* Safari 和 Chrome */
+	-o-border-radius: 50%;	/* Opera */
+	/*向 div 元素添加方框阴影：*/
+	box-shadow: 20px 20px 10px #888888;
+}
+#border-in {
+	border: 1px solid black;
+	background: #EEE;
+	margin-top:100px;
+	width: 550px;
+	height: 300px;
+	/*将 div 元素变为椭圆：*/
+	border-radius: 50%;
+	-ms-border-radius: 50%; 	/* IE 9 */
+	-moz-border-radius: 50%; 	/* Firefox */
+	-webkit-border-radius: 50%; /* Safari 和 Chrome */
+	-o-border-radius: 50%;	/* Opera */
+}
+#center {
+	margin-top:63px;
+	margin-left:100px;
+	border:none;
+	width: 350px;
+	height: 171px;
+	background:#EEE;
+}
+#stage {
+	border:none;
+	background: #525252;
+	color:#FFF;
+	width:52px;
+	height:170px;
+	float:right;
+}
+.stage-out {
+	border:none;
+	margin-left:17px;
+	width:35px;
+	height:35px;
+	background:#EEE;
+}
+#stage-out-text {
+	border:none;
+	line-height:98px;
+	background:#525252;
+	height:100px;
+}
+#area-vip, #area-a, #area-b {
+	background:#EEE;
+	margin-right:7px;
+	width:90px;
+	height:170px;
+	float:right;
+	border:none;
+}
+#area-a-up, #area-b-up, #area-vip-up {
+	width:88px;
+	height:80px;
+}
+#area-a-down, #area-b-down, #area-vip-down {
+	margin-top:6px;
+	width:88px;
+	height:80px;
+}
+.area-t {
+	border: 1px solid black;
+	width:98px;
+	height:100px;
+	float:left;
+	line-height:80px;
+	/*向宽度、高度和转换添加过渡效果*/
+	transition: width 0.5s, height 0.5s;
+	-moz-transition: width 0.5s, height 0.5s, -moz-transform 0.5s; /* Firefox 4 */
+	-webkit-transition: width 0.5s, height 0.5s, -webkit-transform 0.5s; /* Safari and Chrome */
+	-o-transition: width 0.5s, height 0.5s, -o-transform 0.5s; /* Opera */
+}
+.area-b {
+	border: 1px solid black;
+	width:98px;
+	height:97px;
+	float:left;
+	line-height:80px;
+	color: #000;
+	/*向宽度、高度和转换添加过渡效果*/
+	transition: width 0.5s, height 0.5s;
+	-moz-transition: width 0.5s, height 0.5s, -moz-transform 0.5s; /* Firefox 4 */
+	-webkit-transition: width 0.5s, height 0.5s, -webkit-transform 0.5s; /* Safari and Chrome */
+	-o-transition: width 0.5s, height 0.5s, -o-transform 0.5s; /* Opera */
+}
+#area-t1 {
+	/*控制位置*/
+	transform:rotate(0deg) translate(25px, 200px);
+	-ms-transform:rotate(0deg) translate(25px, 200px);	/* IE 9 */
+	-moz-transform:rotate(0deg) translate(25px, 200px); 	/* Firefox */
+	-webkit-transform:rotate(0deg) translate(25px, 200px); /* Safari 和 Chrome */
+	-o-transform:rotate(0deg) translate(25px, 200px);	/* Opera */
+}
+#area-t2 {
+	/*控制位置*/
+	transform:rotate(-37deg) translate(-59px, 54px);
+	-ms-transform:rotate(-37deg) translate(-59px, 54px);	/* IE 9 */
+	-moz-transform:rotate(-37deg) translate(-59px, 54px); 	/* Firefox */
+	-webkit-transform:rotate(-37deg) translate(-59px, 54px); /* Safari 和 Chrome */
+	-o-transform:rotate(-37deg) translate(-59px, 54px);	/* Opera */
+}
+#area-t3 {
+	/*控制位置*/
+	transform:rotate(-18deg) translate(-20px, 20px);
+	-ms-transform:rotate(-18deg) translate(-20px, 20px);	/* IE 9 */
+	-moz-transform:rotate(-18deg) translate(-20px, 20px);	/* Firefox */
+	-webkit-transform:rotate(-18deg) translate(-20px, 20px); /* Safari 和 Chrome */
+	-o-transform:rotate(-18deg) translate(-20px, 20px);/* Opera */
+}
+#area-t4 {
+	/*控制位置*/
+	transform:rotate(-5deg) translate(-5px, 3px);
+	-ms-transform:rotate(-5deg) translate(-5px, 3px);  	/* IE 9 */
+	-moz-transform:rotate(-5deg) translate(-5px, 3px); 	/* Firefox */
+	-webkit-transform:rotate(-5deg) translate(-5px, 3px); /* Safari 和 Chrome */
+	-o-transform:rotate(-5deg) translate(-5px, 3px);  	/* Opera */
+}
+#area-t5 {
+	/*控制位置*/
+	transform:rotate(5deg) translate(5px, 3px);
+	-ms-transform:rotate(5deg) translate(5px, 3px);/* IE 9 */
+	-moz-transform:rotate(5deg) translate(5px, 3px);	/* Firefox */
+	-webkit-transform:rotate(5deg) translate(5px, 3px); /* Safari 和 Chrome */
+	-o-transform:rotate(5deg) translate(5px, 3px); 	/* Opera */
+}
+#area-t6 {
+	/*控制位置*/
+	transform:rotate(18deg) translate(20px, 20px);
+	-ms-transform:rotate(18deg) translate(20px, 20px); 	/* IE 9 */
+	-moz-transform:rotate(18deg) translate(20px, 20px);	/* Firefox */
+	-webkit-transform:rotate(18deg) translate(20px, 20px); /* Safari 和 Chrome */
+	-o-transform:rotate(18deg) translate(20px, 20px); 	/* Opera */
+}
+
+/*遮挡区*/
+#area-out {
+	width:98px;
+	height:97px;
+	float:left;
+	line-height:70px;
+	background:#ADADAD;
+	border-style:none;
+	/*控制位置*/
+	transform:rotate(0deg) translate(685px, -200px);
+	-ms-transform:rotate(0deg) translate(685px, -200px); 	/* IE 9 */
+	-moz-transform:rotate(0deg) translate(685px, -200px); 	/* Firefox */
+	-webkit-transform:rotate(0deg) translate(685px, -200px); /* Safari 和 Chrome */
+	-o-transform:rotate(0deg) translate(685px, -200px); 	/* Opera */
+}
+#area-out-text {
+	color:#FFF;
+	margin-top:-55px;
+	font-family: "华文琥珀";
+	font-size:30px;
+	width:30px;
+	height: 200px;
+	background:#ADADAD;
+	border-style:none;
+	word-wrap:break-word;
+}
+#area-b2 {
+	/*控制位置*/
+	transform:rotate(37deg) translate(-59px, -56px);
+	-ms-transform:rotate(37deg) translate(-59px, -56px);	/* IE 9 */
+	-moz-transform:rotate(37deg) translate(-59px, -56px); 	/* Firefox */
+	-webkit-transform:rotate(37deg) translate(-59px, -56px); /* Safari 和 Chrome */
+	-o-transform:rotate(37deg) translate(-59px, -56px);	/* Opera */
+}
+#area-b3 {
+	/*控制位置*/
+	transform:rotate(18deg) translate(-20px, -22px);
+	-ms-transform:rotate(18deg) translate(-20px, -22px);	/* IE 9 */
+	-moz-transform:rotate(18deg) translate(-20px, -22px);	/* Firefox */
+	-webkit-transform:rotate(18deg) translate(-20px, -22px); /* Safari 和 Chrome */
+	-o-transform:rotate(18deg) translate(-20px, -22px);/* Opera */
+}
+#area-b4 {
+	/*控制位置*/
+	transform:rotate(5deg) translate(-5px, -4px);
+	-ms-transform:rotate(5deg) translate(-5px, -4px); 	/* IE 9 */
+	-moz-transform:rotate(5deg) translate(-5px, -4px); 	/* Firefox */
+	-webkit-transform:rotate(5deg) translate(-5px, -4px); /* Safari 和 Chrome */
+	-o-transform:rotate(5deg) translate(-5px, -4px); 	/* Opera */
+}
+#area-b5 {
+	/*控制位置*/
+	transform:rotate(-5deg) translate(5px, -4px);
+	-ms-transform:rotate(-5deg) translate(5px, -4px);/* IE 9 */
+	-moz-transform:rotate(-5deg) translate(5px, -4px);	/* Firefox */
+	-webkit-transform:rotate(-5deg) translate(5px, -4px); /* Safari 和 Chrome */
+	-o-transform:rotate(-5deg) translate(5px, -4px);	/* Opera */
+}
+#area-b6 {
+	/*控制位置*/
+	transform:rotate(-18deg) translate(20px, -21px);
+	-ms-transform:rotate(-18deg) translate(20px, -21px); 	/* IE 9 */
+	-moz-transform:rotate(-18deg) translate(20px, -21px);	/* Firefox */
+	-webkit-transform:rotate(-18deg) translate(20px, -21px); /* Safari 和 Chrome */
+	-o-transform:rotate(-18deg) translate(20px, -21px); 	/* Opera */
+}
+.area-t:hover, .area-b:hover {
+	background: #FF6E42;
+	cursor: pointer;
+	color: white;
+	/*放大效果*/
+	width:105px;
+	height:105px;
+	/*旋转效果*/
+	transform: rotate(360deg);
+	-moz-transform: rotate(360deg); /* Firefox 4 */
+	-webkit-transform: rotate(360deg); /* Safari and Chrome */
+	-o-transform: rotate(360deg); /* Opera */
+}
+/*颜色控制*/
+.vip{
+	background: #FA1717;
+}
+.a{
+	background: #F08686;
+}
+.b{
+	background: #F0B326;
+}
+.c{
+	background: #8AC5E3;
+}
+.d{
+	background: #12FF84;
+}
+.e{
+	background: #9DD2A3;
+}
+.f{
+	background: #DC5FE7;
+}
+</style>
+<script language="javascript" src="jquery-2.1.1/jquery-2.1.1.js"></script>
+</head>
+<body>
+<div id="content" align="center">
+  <div id="border-out" >
+    <div id="area-t1" class="area-t f">北F</div>
+    <div id="area-t2" class="area-t e">东E</div>
+    <div id="area-t3" class="area-t d">东D2</div>
+    <div id="area-t4" class="area-t d">东D1</div>
+    <div id="area-t5" class="area-t c">东C2</div>
+    <div id="area-t6" class="area-t c">东C1</div>
+    <div id="border-in">
+      <div id="center">
+        <div id="stage">
+          <div class="stage-out"></div>
+          <div id="stage-out-text">舞台</div>
+          <div class="stage-out"></div>
+        </div>
+        <div id="area-vip">
+          <div id="area-vip-up" class="area-t vip">VIP1</div>
+          <div id="area-vip-down" class="area-t vip">VIP2</div>
+        </div>
+        <div id="area-a">
+          <div id="area-a-up" class="area-t a">A1</div>
+          <div id="area-a-down" class="area-t a">A2</div>
+        </div>
+        <div id="area-b">
+          <div id="area-b-up" class="area-t b">B1</div>
+          <div id="area-b-down" class="area-t b">B2</div>
+        </div>
+      </div>
+    </div>
+    <div id="area-out">
+      <div id="area-out-text">遮挡区</div>
+    </div>
+    <div id="area-b2" class="area-b e">西E</div>
+    <div id="area-b3" class="area-b d">西D2</div>
+    <div id="area-b4" class="area-b d">西D1</div>
+    <div id="area-b5" class="area-b c">西C2</div>
+    <div id="area-b6" class="area-b c">西C1</div>
+  </div>
+</div>
+</body>
+</html>
